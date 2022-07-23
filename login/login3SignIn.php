@@ -58,15 +58,32 @@ if(!empty($txt) || !empty($email) || !empty($pswd)){
                 $stmt = $conn->prepare($INSERT2);
                 $stmt->bind_param("s", $txt);
                 $stmt->execute();
+
+                ?>
+
+                <script>
+                    alert("Login using your registered account");
+                    window.location.replace("./login3.html");
+                </script>
+
+                <?php
                 echo "New record inserted successfully";
-
             } else {
-            
-                echo "Someone already entered this username";
-
+                ?>
+                <script>
+                    alert("Someone already entered this username);
+                    history.back()
+                </script>
+                <?php
             } 
 
         } else {
+            ?>
+            <script>
+                alert("Someone already using this email);
+                history.back()
+            </script>
+            <?php
             
             echo "Someone already register using this email";
 
