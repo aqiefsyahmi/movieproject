@@ -24,12 +24,28 @@ if(!empty($email) || !empty($pswd)){
 
         if (mysqli_num_rows($check) > 0 && mysqli_num_rows($check2) > 0) {
 
-            echo "You have log in successfully.";
+            ?>
+                
+            <script>
+                alert("You have log in successfully.");
+                window.location.replace("../index9.html");
+            </script>
+
+            <?php
+
+            echo "";
 
         }
         else{
+            ?>
+                
+            <script>
+                alert("You Have Entered Incorrect Email or Password.");
+                history.back()
+            </script>
 
-            echo "You Have Entered Incorrect Email or Password.";
+            <?php
+
 
         }
 
