@@ -1,0 +1,16 @@
+.rating {
+  margin-top: 30px;
+}
+
+.rating p {
+  margin-bottom: 6px;
+  color: white;
+}
+
+.rating i {
+  font-size: 1.4rem;
+}
+
+.active {
+  color: rgb(254, 206, 80);
+}
