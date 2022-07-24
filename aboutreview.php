@@ -34,16 +34,16 @@ if(!empty($txt)){
         if (mysqli_num_rows($check) > 0) {
             
             if (empty($comment) || empty($rate)) {
+                
                 ?>
                 <script>
                     alert("Please give comment and rating")
                     history.back()
                 </script>
                 <?php
+
             } else {
-                
-                
-                
+
                 $update = mysqli_query($conn, $sql2);
                 
                 if ($update) {
