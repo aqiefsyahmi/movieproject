@@ -25,35 +25,42 @@ if(!empty($txt)){
 
     } else {
 
-        $check = mysqli_query($conn, "SELECT txt FROM userrating WHERE txt = '".$txt."'");
-        $update = mysqli_query($conn, "UPDATE userrating SET comment='".$comment."', rate=".$rate." WHERE txt='".$txt."'");
-
+        $sql = "SELECT txt FROM userrating WHERE txt = '".$txt."'";
+        $sql2 = "UPDATE userrating SET comment='".$comment."', rate=".$rate." WHERE txt='".$txt."'";
+        
+        $check = mysqli_query($conn, $sql);
+        
+        
         if (mysqli_num_rows($check) > 0) {
-
-            if ($update) {
-
+            
+            if (empty($comment) || empty($rate)) {
                 ?>
                 <script>
-                    alert("Your feedback successfully update")
-                    window.location.replace("./index9.html")
+                    alert("Please give comment and rating")
+                    history.back()
                 </script>
                 <?php
-
             } else {
                 
-                ?>
-                <script>
-                    alert("Please rate the movie")
-                    history.back();
-                </script>
-                <?php
                 
+                
+                $update = mysqli_query($conn, $sql2);
+                
+                if ($update) {
+
+                    ?>
+                    <script>
+                        alert("Your feedback successfully update")
+                        window.location.replace("./index9.html")
+                    </script>
+                    <?php
+
+                } 
             }
 
             $conn->close();
 
-        }
-        else{
+        } else{
 
             ?>
             <script>
