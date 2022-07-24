@@ -33,6 +33,11 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+		<!-- RATING SCRIPT -->
+		<link rel="stylesheet" href="rating.css" />
+		<script src="rating.js" defer></script>
+
 	</head>
 	<body>
 		<!-- Page loader -->
@@ -280,6 +285,16 @@
 												<button><i class="icofont icofont-send-mail"></i></button>
 											</div>
 										</div>										
+									</div>
+									<!-- rating -->
+									<div class="col-lg rating">
+										<p>Rate this movie</p>
+										<i class="icofont icofont-star" id="star"></i>
+										<i class="icofont icofont-star" id="star"></i>
+										<i class="icofont icofont-star" id="star"></i>
+										<i class="icofont icofont-star" id="star"></i>
+										<i class="icofont icofont-star" id="star"></i>
+										<input type="hidden" name="rate" id="rate" />
 									</div>
 								</form>
 							</div>
