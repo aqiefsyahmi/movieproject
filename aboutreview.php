@@ -31,9 +31,23 @@ if(!empty($txt)){
         if (mysqli_num_rows($check) > 0) {
 
             if ($update) {
-                echo "Your feedback successfully update";
+
+                ?>
+                <script>
+                    alert("Your feedback successfully update")
+                    window.location.replace("./index9.html")
+                </script>
+                <?php
+
             } else {
-                echo "Error updating record: " . mysqli_error($conn);
+                
+                ?>
+                <script>
+                    alert("Please rate the movie")
+                    history.back();
+                </script>
+                <?php
+                
             }
 
             $conn->close();
@@ -41,14 +55,26 @@ if(!empty($txt)){
         }
         else{
 
-            echo "Username invalid, please use registered username.";
+            ?>
+            <script>
+                alert("Username invalid, please use registered username.")
+                history.back();
+            </script>
+            <?php
+
             $conn->close();
 
         }
     }
 
 } else {
-    echo "Username cannot be found.";
+    ?>
+    <script>
+        alert("Username cannot be found.")
+        history.back();
+    </script>
+    <?php
+
     die();
 }
 
